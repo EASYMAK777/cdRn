@@ -11,7 +11,7 @@ export default function App() {
   // This is the main App component
   return (
 
-    <Provider store>
+    <Provider store = {store}>
       <View style={styles.container}>
         <Text>CLI</Text>
       </View>
