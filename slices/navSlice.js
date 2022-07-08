@@ -7,7 +7,14 @@ const initialState = {
     destination: null,
     travelTimeInformation: null
 }
-
+// Using a function to pass a data object
 export const navSlice = createSlice({
-    
+    name:'nav',
+    initialState,
+    reducer: {
+        setOrigin:(state, action) => { 
+            state.origin = action.payload;
+        }
+       
+    }
 })
