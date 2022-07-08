@@ -11,7 +11,7 @@ const data = [{
 {
     id:"456",
     title:"Order Food",
-    image:"https://www.google.com/search?q=food+images&rlz=1C1UEAD_enUS998US998&sxsrf=ALiCzsZAA4iJMwj4qaDSzsTYuQ2PzryxAg:1657300771499&tbm=isch&source=iu&ictx=1&vet=1&fir=AlrYNQJfZIy9vM%252Cc1W1wgDZbrCp_M%252C_%253BnZZp3zczCNbKrM%252CRB__2DxE3HJa8M%252C_%253BpaE0XIGe7FP9MM%252CW4es-fXnlDqXoM%252C_%253BX8ZiIbomPhy43M%252CRB__2DxE3HJa8M%252C_%253BiO6bGTHk02vweM%252CW4es-fXnlDqXoM%252C_%253B_QyzkG16g_ehEM%252ChrCB_kGeQhoFyM%252C_%253BRXTbcbJ0UD59TM%252CW4es-fXnlDqXoM%252C_%253BqYQc_fW0jtrPFM%252CxUHtSlv1a_sZBM%252C_%253B4VXFatqPlD5rjM%252CRB__2DxE3HJa8M%252C_%253B7S5RstVFHHt0oM%252CuoGL5EjeApZ6LM%252C_%253BzBMLEjqMRYe5CM%252Cc1W1wgDZbrCp_M%252C_%253BHpTVHrdaUUksmM%252CzazhXlEcVtQqOM%252C_%253B-IO4LzVeuXTNhM%252CW4es-fXnlDqXoM%252C_%253BTNlthV9_FAtrKM%252CteNhXgqUnYRCrM%252C_&usg=AI4_-kSOTx2AcApCZGPeiT-ft62OpCcXrg&sa=X&ved=2ahUKEwi8rJW-5un4AhXCcDABHSHgCdwQ9QF6BAgSEAE#imgrc=nZZp3zczCNbKrM",
+    image: require("../assets/images/food.jpg"),
     screen:"FoodScreen",
 },
 {
