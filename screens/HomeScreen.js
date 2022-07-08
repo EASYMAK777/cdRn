@@ -15,7 +15,7 @@ const HomeScreen = () => {
                 }}>
 
                 </Image> */}
-                <Text style={tw`text-red-500 p-10`}>The Charlotte Driver</Text>
+                <Text style={tw`text-red-500 p-10`}>The Charlotte Driver(Logo Here)</Text>
             </View>
         </SafeAreaView>
     );
