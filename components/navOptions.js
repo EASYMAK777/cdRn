@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View } from 'react-native'
+import {  Text, } from 'react-native'
 import React from 'react'
+import { FlatList, TouchableOpacity } from 'react-native-web'
 const data = [{
     
     id:"123",
@@ -17,21 +18,27 @@ const data = [{
     id:"789",
     title:"Drive my Car",
     image:"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.theconversation.com%2Ffiles%2F447426%2Foriginal%2Ffile-20220220-22-1vv5nrp.jpg%3Fixlib%3Drb-1.1.0%26rect%3D0%252C838%252C5000%252C2499%26q%3D45%26auto%3Dformat%26w%3D668%26h%3D324%26fit%3Dcrop&imgrefurl=https%3A%2F%2Ftheconversation.com%2Fus%2Ftopics%2Fdriver-safety-13479&tbnid=Cc-h5kr548MAEM&vet=12ahUKEwja0bSC5-n4AhVi8lMKHW-vBXgQMygdegUIARClAg..i&docid=5PIb7OgoNdIj5M&w=668&h=324&q=driver%20images&ved=2ahUKEwja0bSC5-n4AhVi8lMKHW-vBXgQMygdegUIARClAg",
-    screen:"DriveMyCar"
+    screen:"DriveMyCar",
 }
 
-]
+];
 
 const navOptions = () => {
   return (
 
 
-    <View>
-      <Text>navOptions</Text>
-    </View>
+    <FlatList
+        data={data}
+       keyExtractor={(item) => item.id}
+       renderItem={({ item }) =>(
+        <TouchableOpacity>
+            <Text>{item.title}</Text>
+        </TouchableOpacity>
+
+       ) }
+    />
   )
-}
+};
 
 export default navOptions
 
-const styles = StyleSheet.create({})
