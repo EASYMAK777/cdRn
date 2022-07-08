@@ -1,14 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+
+import React from "react";
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { Provider } from "react-redux";
+import { store } from "./store";
+
+// 1. Set up Redux
+
 
 // View -> UIView
-
 export default function App() {
+  
+  // This is the main App component
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // Provider adds a data layer to App which allows to store Client location information that can be used throughout the app
+    <Provider store={store}>
+      <SafeAreaView style={styles.container}>
+        <Text>THe Charlotte Driver</Text>
+      </SafeAreaView>
+    </Provider>
+      
+
   );
 }
 
