@@ -15,7 +15,7 @@ export default function App() {
     // Provider adds a data layer to App which allows to store Client location information that can be used throughout the app
     <Provider store={store}>
       <SafeAreaView style={styles.container}>
-        <Text>THe Charlotte Drive</Text>
+        <Text>The Charlotte Driver</Text>
       </SafeAreaView>
     </Provider>
       
