@@ -11,11 +11,14 @@ import { store } from "./store";
 // View -> UIView
 export default function App() {
   
-  // This is the main App component
+  
   return (
-    // Provider adds a data layer to App which allows to store Client location information that can be used throughout the app
+   
     <Provider store={store}>
-      <HomeScreen/>
+      <Text>
+
+       <HomeScreen/>
+      </Text>
     </Provider>
       
 
