@@ -15,11 +15,11 @@ export default function App() {
   return (
    
     <Provider store={store}>
-      <Text>
-
        <HomeScreen/>
-      </Text>
     </Provider>
+      
+
+      
       
 
   );

@@ -1,6 +1,6 @@
-import {  Text, } from 'react-native'
+
 import React from 'react'
-import { FlatList, TouchableOpacity } from 'react-native-web'
+import { FlatList, TouchableOpacity, Text } from 'react-native'
 const data = [{
     
     id:"123",
