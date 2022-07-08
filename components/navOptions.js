@@ -23,7 +23,7 @@ const data = [{
 
 ];
 
-const navOptions = () => {
+const NavOptions = () => {
   return (
 
 
@@ -40,5 +40,5 @@ const navOptions = () => {
   )
 };
 
-export default navOptions
+export default NavOptions
 
