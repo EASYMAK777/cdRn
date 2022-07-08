@@ -1,4 +1,5 @@
-import { StatusBar } from 'expo-status-bar';
+
+import React from "react";
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { Provider } from "react-redux";
 
@@ -10,11 +11,11 @@ export default function App() {
   
   // This is the main App component
   return (
-
+    // Provider adds a data layer to App which allows to store Client location information that can be used throughout the app
     <Provider store = {store}>
-      <View style={styles.container}>
-        <Text>CLI</Text>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <Text>THe Charlotte Driver</Text>
+      </SafeAreaView>
     </Provider>
       
 
