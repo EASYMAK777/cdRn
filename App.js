@@ -24,9 +24,9 @@ export default function App() {
 
       <SafeAreaProvider>
       <Stack.Navigator>
-        <Stack.Screen
-         name='HomeScreen'
-          component={HomeScreen}
+        <Stack.Screen 
+        name='HomeScreen'
+        component={HomeScreen}
          />
       </Stack.Navigator>
 
