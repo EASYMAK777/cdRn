@@ -4,6 +4,7 @@ import { FlatList, TouchableOpacity, Text, View } from 'react-native'
 import tw from 'tailwind-react-native-classnames';
 // import { Icon } from "@rneui/themed";
 
+ 
 
 const data = [{
     
