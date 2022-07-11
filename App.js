@@ -9,6 +9,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapScreen from "../charlotteDriver/screens/MapScreen"
 import FoodScreen from "../charlotteDriver/screens/FoodScreen"
+import DriveMyCar from "../charlotteDriver/screens/DriveMyCar"
 
 // 1. Set up Redux
 
@@ -42,6 +43,13 @@ export default function App() {
           <Stack.Screen 
           name='FoodScreen'
           component={FoodScreen}
+          options={{
+            headerShown: false,
+          }}
+          />
+          <Stack.Screen 
+          name='DriveMyCar'
+          component={DriveMyCar}
           options={{
             headerShown: false,
           }}
