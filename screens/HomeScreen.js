@@ -11,6 +11,7 @@ const HomeScreen = () => {
       <Text style={tw`text-red-500 p-10`}>The Charlotte Driver Logo Here</Text>
       <View style={tw`p-5`}>
         <GooglePlacesAutocomplete
+          placeholder="Pick up address"
           nearbyPlacesAPI="GooglePlacesSearch"
           debounce={400}
         />
