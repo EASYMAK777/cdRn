@@ -12,6 +12,14 @@ const HomeScreen = () => {
       <View style={tw`p-5`}>
         <GooglePlacesAutocomplete
           placeholder="Pick up address"
+          styles={{
+            container: {
+              flex: 0,
+            },
+            textInput: {
+              fontSize: 18,
+            },
+          }}
           nearbyPlacesAPI="GooglePlacesSearch"
           debounce={400}
         />
