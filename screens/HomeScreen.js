@@ -42,6 +42,8 @@ const HomeScreen = () => {
                 description: data.description,
               })
             );
+            //
+            dispatch(setDestination(null));
           }}
           // GETS DETAILS ABOUT USERS LOCATION. CITY STATE COUNTY LONG LAT ETC
           fetchDetails={true}
