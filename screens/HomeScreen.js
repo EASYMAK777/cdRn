@@ -34,16 +34,6 @@ const HomeScreen = () => {
           onPress={(data, details = null) => {
             console.log(data);
             console.log(details);
-            // SENDS INFORMATION FROM THE OBJECT TO THE "DATA LAYER" USING REDUX
-            dispatch(
-              // APP SAVES ORIGIN LOCATION INFORMATION IN REDUX "DATA LAYER"
-              setOrigin({
-                location: details.geometry.location,
-                description: data.description,
-              })
-            );
-            //
-            dispatch(setDestination(null));
           }}
           // GETS DETAILS ABOUT USERS LOCATION. CITY STATE COUNTY LONG LAT ETC
           fetchDetails={true}
