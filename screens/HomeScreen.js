@@ -25,6 +25,16 @@ const HomeScreen = () => {
               fontSize: 18,
             },
           }}
+          // CLIENT PRESSES BUTTON AND DETAILS ABOUT THE LOCATION GETS CONSOLE LOGGED IN THE BACKGROUND
+          onPress={(data, details = null) => {
+            console.log(data);
+            console.log(details);
+          }}
+          fetchDetails={true}
+          // CLIENT MUST HAVE AT LEAST ENTERED TWO DIGITS UNTIL AUTOCOMPLETE STARTS
+          minLength={2}
+          // REMOVES "POWERED BY GOOGLE" LOGO
+          enablePoweredByContainer={false}
           // QUERY ATTRIBUTE TO PASS API KEY AND QUERTY GOOGLE
           query={{
             key: GOOGLE_MAPS_APIKEY,
