@@ -32,8 +32,8 @@ const HomeScreen = () => {
           }}
           // CLIENT PRESSES BUTTON AND DETAILS ABOUT THE LOCATION GETS CONSOLE LOGGED IN THE BACKGROUND
           onPress={(data, details = null) => {
-            console.log(data);
-            console.log(details);
+            // console.log(data);
+            // console.log(details);
             dispatch(
               setOrigin({
                 location: details.geometry.location,
