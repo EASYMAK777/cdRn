@@ -2,12 +2,15 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import MapView, { Marker } from "react-native-maps";
 import tw from "tailwind-react-native-classnames";
-import { selectOrigin } from "../slices/navSlice";
+import { selectDestination, selectOrigin } from "../slices/navSlice";
 import { useSelector } from "react-redux";
+import MapViewDirections from "react-native-maps-directions";
+import { GOOGLE_MAPS_APIKEY } from "@env";
 
 const Map = () => {
   // USING REACT REDUX TO PULL FROM DATALAYER FROM STORE JS TO SHOW MAP OF USERS LOCATION
   const origin = useSelector(selectOrigin);
+  const destination = useSelector(selectDestination);
   return (
     // MAPVEW COMPONENET FROM  REACT-NATIVVE-MAPS DEPENDENCU
     <MapView
@@ -24,6 +27,15 @@ const Map = () => {
         longitudeDelta: 0.005,
       }}
     >
+      {origin && destination && (
+        <MapViewDirections
+          origin={origin.description}
+          destination={destination.description}
+          apiKey={GOOGLE_MAPS_APIKEY}
+          strokeWidth={3}
+          strokeColor="black"
+        />
+      )}
       {/* OPTIONAL CHAINING USED SO APP DOESNT CRASH WHEN A PIN CANT BE DROPPED IN A LOCATION */}
       {origin?.location && (
         <Marker

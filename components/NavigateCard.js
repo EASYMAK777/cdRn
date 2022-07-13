@@ -12,6 +12,7 @@ const NavigateCard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   return (
+    // <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
     <SafeAreaView style={tw`bg-white flex-1`}>
       <View>
         <Text style={tw`text-center py-5 text-xl`}>Good Morning, User</Text>
@@ -45,6 +46,7 @@ const NavigateCard = () => {
         </View>
       </View>
     </SafeAreaView>
+    // </KeyboardAvoidingView>
   );
 };
 
