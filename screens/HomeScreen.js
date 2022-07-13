@@ -32,6 +32,8 @@ const HomeScreen = () => {
           }}
           // CLIENT PRESSES BUTTON AND DETAILS ABOUT THE LOCATION GETS CONSOLE LOGGED IN THE BACKGROUND
           onPress={(data, details = null) => {
+            console.log(data);
+            console.log(details);
             dispatch(
               setOrigin({
                 location: details.geometry.location,
@@ -58,7 +60,6 @@ const HomeScreen = () => {
           // TAKES 400MS AFTER CLIENT STOPS TYPING TO PULL UP THE VARIOUS LOCATIONS FOR AUTOFILL
           debounce={400}
         />
-        {/* NAV MENU ITEMS */}
         <NavOptions />
       </View>
     </SafeAreaView>
