@@ -23,7 +23,22 @@ const Map = () => {
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
       }}
-    ></MapView>
+    >
+      {/* OPTIONAL CHAINING USED SO APP DOESNT CRASH WHEN A PIN CANT BE DROPPED IN A LOCATION */}
+      {origin?.location && (
+        <Marker
+          // RENDER MAP MARKER USING STORE.JS DATA LAYER WITH REACT REDUX AS ANOTHER OBJECT
+          coordinate={{
+            latitude: origin.location.lat,
+            longitude: origin.location.lng,
+          }}
+          //   ADDS IDENTIFIER TO ORIGIN PIN INCLUDING ADDRESS INFORMATION
+          title="Origin"
+          description={origin.description}
+          identifier="origin"
+        />
+      )}
+    </MapView>
   );
 };
 
