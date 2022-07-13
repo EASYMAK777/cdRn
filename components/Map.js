@@ -23,7 +23,7 @@ const Map = () => {
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
       }}
-    />
+    ></MapView>
   );
 };
 
