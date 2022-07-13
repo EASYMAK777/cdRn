@@ -6,6 +6,7 @@ import { selectOrigin } from "../slices/navSlice";
 import { useSelector } from "react-redux";
 // import { Icon } from "@rneui/themed";
 
+// ARRAY OF OBJECTS FOR NAV MENU WITH ICONS
 const data = [
   {
     id: "123",
@@ -29,12 +30,16 @@ const data = [
     screen: "DriveMyCar",
   },
 ];
-
+// RENDER THE NAV OPTIONS ON HOMESCREEN
 const NavOptions = () => {
+  // NAV OPTIONS FUNCTIONAL COMP
   const navigation = useNavigation();
+  //   USING DATALAYER FROM STORE.JS TO RENDER NAVOPTIONS CAPABLE OF STORING INFOMRATION
   const origin = useSelector(selectOrigin);
   return (
+    // USING FLAT LIST COMPONENT TO RENDER NAVOPTIONS
     <FlatList
+      // PASSING DATA OBJECT TO TOUCHABLE OPACITY COMP
       data={data}
       keyExtractor={(item) => item.id}
       renderItem={({ item }) => (
