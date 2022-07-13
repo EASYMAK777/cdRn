@@ -19,8 +19,9 @@ const Map = () => {
       initialRegion={{
         latitude: origin.location.lat,
         longitude: origin.location.lng,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
+        // BRINGS ZOOM LEVEL TO A CLOSER STREETVIEW LOOK OF THE MAPSCREEN
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
       }}
     />
   );
