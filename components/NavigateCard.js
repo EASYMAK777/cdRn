@@ -5,10 +5,12 @@ import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplet
 import { GOOGLE_MAPS_APIKEY } from "@env";
 import { useDispatch } from "react-redux";
 import { setDestination } from "../slices/navSlice";
+import { useNavigation } from "@react-navigation/native";
 
 const NavigateCard = () => {
   // USING HOOK TO REACH DISPATCH OBJECT
   const dispatch = useDispatch();
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={tw`bg-white flex-1`}>
       <View>
@@ -23,10 +25,13 @@ const NavigateCard = () => {
               returnKeyType={"search"}
               minLength={2}
               onPress={(data, details = null) => {
-                dispatch({
-                  location: details.geometry.location,
-                  description: data.description,
-                });
+                dispatch(
+                  setDestination({
+                    location: details.geometry.location,
+                    description: data.description,
+                  })
+                );
+                navigation.navigate("RideOptionsCard");
               }}
               enablePoweredByContainer={false}
               query={{
@@ -50,15 +55,15 @@ export default NavigateCard;
 const toInputBoxStyles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    paddingTope: 20,
-    flex: 0,
+    paddingTop: 20,
+    flex: 1,
   },
   textInput: {
     backgroundColor: "#DDDDDF",
     borderRadius: 0,
     fontSize: 18,
   },
-  textInputContaine: {
+  textInputContainer: {
     paddingHorizontal: 20,
     paddingBottom: 0,
   },
