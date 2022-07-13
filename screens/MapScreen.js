@@ -3,10 +3,10 @@ import React from "react";
 import tw from "tailwind-react-native-classnames";
 import Map from "../components/Map";
 import MapView from "react-native-maps";
-import { createStackNavigator } from "@react-navigation/native-stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const MapScreen = () => {
-  const Stack = createStackNavigator();
+  const stack = createStackNavigator();
   return (
     <View>
       <View style={tw`h-1/2`}>
@@ -15,9 +15,7 @@ const MapScreen = () => {
       </View>
 
       <View style={tw`h-1/2`}>
-        {/* RENDERS RIDE OPTIONS ON BOTTOM HALF OF SCREEN USING REACT-NAVIGATION  */}
         <Stack.Navigator>
-          {/* CREATING A STACK OF SCREENS CALLED NAVIGATE CARD */}
           <Stack.Screen
             name="NavigateCard"
             component={NavigateCard}
