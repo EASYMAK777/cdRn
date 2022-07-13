@@ -32,8 +32,15 @@ const HomeScreen = () => {
           }}
           // CLIENT PRESSES BUTTON AND DETAILS ABOUT THE LOCATION GETS CONSOLE LOGGED IN THE BACKGROUND
           onPress={(data, details = null) => {
-            console.log(data);
-            console.log(details);
+            // console.log(data);
+            // console.log(details);
+            dispatch(
+              setOrigin({
+                location: details.geometry.location,
+                description: data.description,
+              })
+            );
+            dispatch(setDestination(null));
           }}
           // GETS DETAILS ABOUT USERS LOCATION. CITY STATE COUNTY LONG LAT ETC
           fetchDetails={true}
@@ -53,7 +60,6 @@ const HomeScreen = () => {
           // TAKES 400MS AFTER CLIENT STOPS TYPING TO PULL UP THE VARIOUS LOCATIONS FOR AUTOFILL
           debounce={400}
         />
-        {/* NAV MENU ITEMS */}
         <NavOptions />
       </View>
     </SafeAreaView>
