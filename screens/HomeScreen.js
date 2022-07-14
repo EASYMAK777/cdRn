@@ -11,7 +11,6 @@ import { setDestination, setOrigin } from "../slices/navSlice";
 // HOMESCREEN COMPONENT IS FUNTIONAL COMPONENT
 const HomeScreen = () => {
   // USING REACT REDUX DISPATCH FUNCTION--->REFER TO LINE 38-40 AT THE ONPRESS EVENT
-  const dispatch = useDispatch();
 
   return (
     <SafeAreaView style={tw`bg-white h-full`}>
