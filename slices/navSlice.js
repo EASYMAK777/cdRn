@@ -10,6 +10,7 @@ const initialState = {
 export const navSlice = createSlice({
   name: "nav",
   initialState,
+  // YOU MUST ADD THE S TO REDUCER OR THE APP WILL SPIT OUT ERROR "'(0, navSlice.setOrigin)' is undefined"
   reducers: {
     setOrigin: (state, action) => {
       state.origin = action.payload;
