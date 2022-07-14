@@ -11,6 +11,7 @@ const Map = () => {
   // USING REACT REDUX TO PULL FROM DATALAYER FROM STORE JS TO SHOW MAP OF USERS LOCATION
   const origin = useSelector(selectOrigin);
   const destination = useSelector(selectDestination);
+
   return (
     // MAPVEW COMPONENET FROM  REACT-NATIVVE-MAPS DEPENDENCU
     <MapView
@@ -29,8 +30,8 @@ const Map = () => {
     >
       {origin && destination && (
         <MapViewDirections
-          origin={origin.description}
-          destination={destination.description}
+          origin={origin}
+          destination={destination}
           apiKey={GOOGLE_MAPS_APIKEY}
           strokeWidth={3}
           strokeColor="black"
@@ -46,7 +47,7 @@ const Map = () => {
           }}
           //   ADDS IDENTIFIER TO ORIGIN PIN INCLUDING ADDRESS INFORMATION
           title="Origin"
-          description={origin.description}
+          description={origin}
           identifier="origin"
         />
       )}
