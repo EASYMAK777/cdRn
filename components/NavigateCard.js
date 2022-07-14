@@ -1,4 +1,10 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  KeyboardAvoidingView,
+} from "react-native";
 import React from "react";
 import tw from "tailwind-react-native-classnames";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
@@ -12,41 +18,41 @@ const NavigateCard = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   return (
-    // <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
-    <SafeAreaView style={tw`bg-white flex-1`}>
-      <View>
-        <Text style={tw`text-center py-5 text-xl`}>Good Morning, User</Text>
-        <View style={tw`border-t border-gray-200 flex-shrink`}>
-          <View>
-            {/* GOOGLE PLACES COMPONENT REFER TO HOMESCREEN.JS FOR ELABORATION*/}
-            <GooglePlacesAutocomplete
-              placeholder="Where to?"
-              styles={toInputBoxStyles}
-              fetchDetails={true}
-              returnKeyType={"search"}
-              minLength={2}
-              onPress={(data, details = null) => {
-                dispatch(
-                  setDestination({
-                    location: details.geometry.location,
-                    description: data.description,
-                  })
-                );
-                navigation.navigate("RideOptionsCard");
-              }}
-              enablePoweredByContainer={false}
-              query={{
-                key: GOOGLE_MAPS_APIKEY,
-                language: "en",
-              }}
-              nearbyPlacesAPI="GooglePlacesSearch"
-              debounce={400}
-            />
+    <KeyboardAvoidingView style={{ flex: 1 }} behavior="padding">
+      <SafeAreaView style={tw`bg-white flex-1`}>
+        <View>
+          {/* <Text style={tw`text-center py-5 text-xl`}>Good Morning, User</Text> */}
+          <View style={tw`border-t border-gray-200 flex-shrink`}>
+            <View>
+              {/* GOOGLE PLACES COMPONENT REFER TO HOMESCREEN.JS FOR ELABORATION*/}
+              <GooglePlacesAutocomplete
+                placeholder="Where to?"
+                styles={toInputBoxStyles}
+                fetchDetails={true}
+                returnKeyType={"search"}
+                minLength={2}
+                onPress={(data, details = null) => {
+                  dispatch(
+                    setDestination({
+                      location: details.geometry.location,
+                      description: data.description,
+                    })
+                  );
+                  navigation.navigate("RideOptionsCard");
+                }}
+                enablePoweredByContainer={false}
+                query={{
+                  key: GOOGLE_MAPS_APIKEY,
+                  language: "en",
+                }}
+                nearbyPlacesAPI="GooglePlacesSearch"
+                debounce={400}
+              />
+            </View>
           </View>
         </View>
-      </View>
-    </SafeAreaView>
-    // </KeyboardAvoidingView>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 };
 
